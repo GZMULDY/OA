@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
@@ -29,6 +30,7 @@ public class ProcessTemplateServiceImpl extends ServiceImpl<ProcessTemplateMappe
         private ProcessTemplateMapper processTemplateMapper;
 
         @Autowired
+        @Lazy
         private ProcessTypeService processTypeService;
 
         @Autowired

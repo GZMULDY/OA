@@ -4,7 +4,7 @@ wechat:
   mpAppId: wxd6d4476a1c9d462d
   mpAppSecret: d8b6ba0a4c171e60bbd087ca3e661480
 mybatis-plus:
-  mapper-locations: classpath:com/bangong/*/mapper/xml/*.xml
+  mapper-locations: classpath:xml/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 查看日志
 spring:
