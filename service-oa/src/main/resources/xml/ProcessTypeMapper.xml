@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bangong.process.mapper.ProcessTypeMapper">
+
+    <!-- 根据审批类型ID查询对应的审批模板列表 -->
+    <select id="selectProcessTemplatesByTypeId" resultType="com.bangong.model.process.ProcessTemplate">
+        SELECT 
+            id,
+            name,
+            icon_url,
+            process_type_id,
+            form_props,
+            form_options,
+            description,
+            process_definition_key,
+            process_definition_path,
+            process_model_id,
+            status,
+            create_time,
+            update_time,
+            is_deleted
+        FROM oa_process_template 
+        WHERE process_type_id = #{typeId} 
+        AND is_deleted = 0
+        ORDER BY create_time DESC
+    </select>
+
+</mapper> 
